@@ -1,0 +1,22 @@
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+    
+    float sayi = 0;
+    
+    void Start()
+    {
+         while (sayi<=5)     //Eğer kısıt konulmazsa sonsuza kadar dönecektir.
+        {
+            print("dönüyorum"); // Bu işlemin sonucunda 6 kere "dönüyorum" sonucu ekrana basılır.
+            sayi++;                 
+
+        }
+        
+    }
+    void Update()
+    {
+
+    }
+}

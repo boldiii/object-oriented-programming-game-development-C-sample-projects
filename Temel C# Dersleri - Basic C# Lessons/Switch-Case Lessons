@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+
+     int sayim = 3;
+    void Start()
+    {
+         switch (sayim)                  // Birebir eşleştiği bloğa girip oradaki kod bloğunu çalıştaracaktır ve duracaktır.
+        {                                           //Ekran çıktısı "Evet değer 3 " ibaresi olur.
+            case 1:
+                print("Evet değer 1 ");
+                break;
+            case 2:
+                print("Evet değer 2");
+                break;
+            case 3:
+                print("Evet değer 3");
+                break;
+            default:
+                print("Eşleşem kayit yok");
+                break;
+        }
+
+
+
+    }
+    void Update()
+    {
+
+    }
+}

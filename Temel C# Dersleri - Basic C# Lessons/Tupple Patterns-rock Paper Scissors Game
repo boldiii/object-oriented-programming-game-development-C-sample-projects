@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+
+   
+    void Start()
+    {
+        string taskagitmakas(string veri1, string veri2) => (veri1, veri2) switch
+        {
+            ("tas","kagit") => "Kagit kazandi",             //Demet desenleri kullanarak string türünde iki adet veri girişi yapacağımı belirttikten sonra 
+            ("tas", "makas") => "Tas kazandi",              // anahtar olarak veri1 ve veri2'yi referans alarak eşelştirme yapmasını sağladık.
+            ("kagit", "tas") => "Kagit kazandi",            // Ekrana basmak için deseni çağırdık ve iki adet veri girişi yapıldı.
+            ("kagit", "makas") => "Makas kazandi",          // switch girdiğimiz veri girişlerini uygun satırla eşleştirdi ve sonuç yazdırıldı.
+            ("makas", "tas") => "Tas kazandi",              
+            ("makas", "kagit") => "Makas kazandi",
+            ("tas", "tas") => "Durum berabere",
+            ("kagit", "kagit") => "Durum berabere",
+            ("makas", "makas") => "Durum berabere",
+            (_,_) => "Veri girisi yok"
+        };
+
+        print(taskagitmakas("tas", "kagit"));
+
+    }
+
+    
+    void Update()
+    {
+
+    }
+}

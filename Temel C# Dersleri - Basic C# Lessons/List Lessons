@@ -1,0 +1,26 @@
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+
+   
+    void Start()
+    {
+        List<int> yaslar = new List<int>();     //Listelere dizilerin aksine çok daha kolay müdahale edilebilir.
+        yaslar.Add(50);                            //Eleman ekleme komutu
+        yaslar.Add(40);
+        yaslar.Add(18);
+        yaslar.Insert(1, 90);                   // Özel indeksli eleman ekleme
+        yaslar.Remove(40);                      // Elemanı kaldırmak(silmek)
+        yaslar.Contains(18);                     // Elemanın varlığını sorgular.Daha çok döngülerde kullanılır.   
+        yaslar.Clear();                         //Listedeki tüm elemanları temizler.
+
+
+       }
+
+    
+    void Update()
+    {
+
+    }
+}
