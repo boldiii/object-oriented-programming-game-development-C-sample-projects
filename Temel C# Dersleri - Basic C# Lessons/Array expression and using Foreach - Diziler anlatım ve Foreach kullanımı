@@ -1,0 +1,37 @@
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+    
+
+    void Start()
+    {
+        int[] sayilarim = { 3, 6, 9 };  // Tek boyutlu dizileri bu şekilde oluşturabiliriz.
+        int[] sayilarim1 = new int[3];
+        sayilarim1[0] = 3;              //Bu şekilde diziye atama yapılabilir.
+        sayilarim1[1] = 5;
+
+        for (int i = 0; i < sayilarim1.Length; i++)
+        {
+            sayilarim1[i] = 1 + i;                  // Arzu edilirse for kullanılarak ardışık atama yapılabilir.Kurallar değiştirilebilir.
+        }
+
+        string[][] cars = new string[2][];              // İki boyutlu dizi başlattık.
+        cars[0] = new string[] { "Audi", "Bmw", "Mercedes" }; // ilk boyutu atadık ve daha sonra ikinci boyutu başlatıp ikinci boyut atamalarını yaptık.
+        cars[1] = new string[] { "RS7", "M4", "C180" };
+
+        //Genel olarak dizilerin atamaları bu şekilde yapılmaktadır.Şimdi de atanmış elemanları Foreach ile çağıralım.
+
+        foreach (var item in cars)
+        {
+            print(item[1]); // Ekran çıktısı foreach komutunda sırayla yazılır ve iki elemanında birinci indislerini yazar. Sonuç "Bmw" "M4" olur.
+        }
+
+
+
+    }
+    void Update()
+    {
+
+    }
+}
