@@ -1,0 +1,46 @@
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+
+    void Start()
+    {
+       
+        Invoke("Deneme", 4f);                        //Invoke; Aynı class içerisindeki fonksiyonu(methodu) bir süre sonra çağırmaya yarar. 
+    }
+
+
+    void deneme()
+    {
+        print("Ben Invoke ile geldim.");
+    }
+
+}
+///////////////////////////////////////////////////////////////////////
+
+public class TekrarCalismasi : MonoBehaviour
+{
+
+    void Start()
+    {
+
+        InvokeRepeating("deneme", 4f, 1f);        //InvokeRepeating; Aynı class içerisindeki fonksiyonu(methodu) bir süre sonra çalıştırıp, verdiğimiz aralıklarda sürekli çalıştırır.
+    }
+
+
+    void deneme()
+    {
+        print("Ben Invoke ile geldim.");
+    }
+
+}
+
+void Update()
+{
+    if (Input.GetKeyDown("Space"))          //InvokeRepeat döngüsünü bu şekilde durdurabiliriz.
+    {
+        CancelInvoke();
+    }
+
+
+}
