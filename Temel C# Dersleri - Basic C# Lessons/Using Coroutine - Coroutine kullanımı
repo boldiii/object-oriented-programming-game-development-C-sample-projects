@@ -1,0 +1,53 @@
+using System.Collections;
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+    IEnumerator deneme1;
+    void Start()
+    {
+        deneme1 = deneme(2);
+        StartCoroutine(deneme1);
+}                                                                   //Dinamik kullanım bu şekildedir.
+        IEnumerator deneme(float saniyem)
+        {
+        while (true)
+        {
+            print("İlk mesaj");
+            yield return new WaitForSeconds(saniyem);
+            print("İkinci mesaj");
+            yield return new WaitForSeconds(saniyem);
+
+        }
+
+        }
+
+}
+ //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ using System.Collections;
+using UnityEngine;
+
+public class TekrarCalismasi : MonoBehaviour
+{
+    
+    void Start()
+    {
+       
+        StartCoroutine(deneme());
+    }
+        IEnumerator deneme()                    //Daha manuel bir kullanım şeklide budur.
+        {
+        while (true)
+        {
+            print("İlk mesaj");
+            yield return new WaitForSeconds(2);
+            print("İkinci mesaj");
+            yield return new WaitForSeconds(2);
+
+        }
+
+        }
+
+}
