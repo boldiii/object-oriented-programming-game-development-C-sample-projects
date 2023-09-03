@@ -1,0 +1,63 @@
+using UnityEngine;
+
+public class Tekrar : MonoBehaviour
+{
+    
+    void Start()
+    {
+        GetComponent<CapsuleCollider>().isTrigger = false; // bu en kötü yazım şeklidir
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using UnityEngine;
+
+public class Tekrar : MonoBehaviour
+{
+    CapsuleCollider kapsul1;
+    void Start()
+    {
+        kapsul1 = GetComponent<CapsuleCollider>();      //Nispeten daha performanslıdır.
+        kapsul1.isTrigger = false;                      
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using UnityEngine;
+
+public class Tekrar : MonoBehaviour
+{
+    GameObject kapsul1;
+    
+    void Start()
+    {
+        kapsul1 = GameObject.Find("Benim Objem");                   // Objeyi ismine göre aratarak yakalama işlemi.
+        kapsul1.GetComponent<CapsuleCollider>().isTrigger = false;
+
+
+        kapsul1 = GameObject.FindWithTag("Player");
+        kapsul1.GetComponent<CapsuleCollider>().enabled = false;   // Objeyi Tagına göre aratarak yakalama işlemi.
+     
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using UnityEngine;
+
+public class Tekrar : MonoBehaviour
+{
+  GameObject[] cokluobje;
+                                                                // Çoklu Obje yakalayıp daha sonra yakalanılan objenin içindeki komponentlere erişim mümkün.
+    void Start()
+    {
+        
+       cokluobje = GameObject.FindGameObjectsWithTag("Player"); 
+            foreach (var item in cokluobje)
+        {
+            item.GetComponent<CapsuleCollider>().isTrigger = true;
+        }
+    
+    }
+}
